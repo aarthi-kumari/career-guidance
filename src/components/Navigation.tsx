@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { GraduationCap, Menu, X, User } from "lucide-react";
+import LoginDialog from "./LoginDialog";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,6 +35,11 @@ const Navigation = () => {
                 key={item.name}
                 href={item.href}
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const target = item.href.substring(1); // Remove #
+                  document.getElementById(target)?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 {item.name}
               </a>
@@ -42,13 +48,17 @@ const Navigation = () => {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" size="sm">
-              <User className="w-4 h-4 mr-2" />
-              Login
-            </Button>
-            <Button size="sm" className="btn-success">
-              Get Started
-            </Button>
+            <LoginDialog>
+              <Button variant="outline" size="sm">
+                <User className="w-4 h-4 mr-2" />
+                Login
+              </Button>
+            </LoginDialog>
+            <LoginDialog>
+              <Button size="sm" className="btn-success">
+                Get Started
+              </Button>
+            </LoginDialog>
           </div>
 
           {/* Mobile Menu Button */}
@@ -69,19 +79,28 @@ const Navigation = () => {
                   key={item.name}
                   href={item.href}
                   className="text-sm font-medium text-foreground hover:text-primary transition-colors py-2"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const target = item.href.substring(1); // Remove #
+                    document.getElementById(target)?.scrollIntoView({ behavior: 'smooth' });
+                    setIsMenuOpen(false);
+                  }}
                 >
                   {item.name}
                 </a>
               ))}
               <div className="flex flex-col space-y-2 pt-4 border-t border-border">
-                <Button variant="outline" size="sm" className="justify-start">
-                  <User className="w-4 h-4 mr-2" />
-                  Login
-                </Button>
-                <Button size="sm" className="btn-success justify-start">
-                  Get Started
-                </Button>
+                <LoginDialog>
+                  <Button variant="outline" size="sm" className="justify-start">
+                    <User className="w-4 h-4 mr-2" />
+                    Login
+                  </Button>
+                </LoginDialog>
+                <LoginDialog>
+                  <Button size="sm" className="btn-success justify-start">
+                    Get Started
+                  </Button>
+                </LoginDialog>
               </div>
             </div>
           </div>

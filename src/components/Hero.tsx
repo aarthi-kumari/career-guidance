@@ -1,6 +1,7 @@
 import { ArrowRight, BookOpen, MapPin, Calendar, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-education.jpg";
+import LoginDialog from "./LoginDialog";
 
 const Hero = () => {
   return (
@@ -29,33 +30,54 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button className="btn-hero group">
-              Start Your Journey
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button variant="outline" size="lg" className="btn-secondary-outline">
+            <LoginDialog>
+              <Button className="btn-hero group">
+                Start Your Journey
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </LoginDialog>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="btn-secondary-outline"
+              onClick={() => document.getElementById('quiz')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Explore Features
             </Button>
           </div>
 
           {/* Feature Highlights */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
-            <div className="flex flex-col items-center p-4 edu-card animate-bounce-in" style={{animationDelay: '0.1s'}}>
+            <button 
+              className="flex flex-col items-center p-4 edu-card animate-bounce-in hover:scale-105 transition-transform cursor-pointer" 
+              style={{animationDelay: '0.1s'}}
+              onClick={() => document.getElementById('quiz')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               <BookOpen className="w-8 h-8 text-primary mb-2" />
               <span className="text-sm font-semibold">Smart Quizzes</span>
-            </div>
-            <div className="flex flex-col items-center p-4 edu-card animate-bounce-in" style={{animationDelay: '0.2s'}}>
+            </button>
+            <button 
+              className="flex flex-col items-center p-4 edu-card animate-bounce-in hover:scale-105 transition-transform cursor-pointer" 
+              style={{animationDelay: '0.2s'}}
+              onClick={() => document.getElementById('colleges')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               <MapPin className="w-8 h-8 text-secondary mb-2" />
               <span className="text-sm font-semibold">College Finder</span>
-            </div>
-            <div className="flex flex-col items-center p-4 edu-card animate-bounce-in" style={{animationDelay: '0.3s'}}>
+            </button>
+            <button 
+              className="flex flex-col items-center p-4 edu-card animate-bounce-in hover:scale-105 transition-transform cursor-pointer" 
+              style={{animationDelay: '0.3s'}}
+              onClick={() => document.getElementById('timeline')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               <Calendar className="w-8 h-8 text-success mb-2" />
               <span className="text-sm font-semibold">Timeline Tracker</span>
-            </div>
-            <div className="flex flex-col items-center p-4 edu-card animate-bounce-in" style={{animationDelay: '0.4s'}}>
-              <User className="w-8 h-8 text-warning mb-2" />
-              <span className="text-sm font-semibold">Personalized</span>
-            </div>
+            </button>
+            <LoginDialog>
+              <button className="flex flex-col items-center p-4 edu-card animate-bounce-in hover:scale-105 transition-transform cursor-pointer" style={{animationDelay: '0.4s'}}>
+                <User className="w-8 h-8 text-warning mb-2" />
+                <span className="text-sm font-semibold">Personalized</span>
+              </button>
+            </LoginDialog>
           </div>
         </div>
       </div>
