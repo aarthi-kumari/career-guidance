@@ -1,12 +1,31 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Navigation from "@/components/Navigation";
+import Hero from "@/components/Hero";
+import AptitudeQuiz from "@/components/AptitudeQuiz";
+import CourseMapping from "@/components/CourseMapping";
+import CollegeDirectory from "@/components/CollegeDirectory";
+import TimelineTracker from "@/components/TimelineTracker";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Navigation />
+      <main className="pt-16">
+        <Hero />
+        <div id="quiz">
+          <AptitudeQuiz />
+        </div>
+        <div id="courses">
+          <CourseMapping />
+        </div>
+        <div id="colleges">
+          <CollegeDirectory />
+        </div>
+        <div id="timeline">
+          <TimelineTracker />
+        </div>
+      </main>
+      <Footer />
     </div>
   );
 };
