@@ -19,11 +19,11 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-[var(--gradient-hero)] rounded-xl flex items-center justify-center">
+            <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center">
               <GraduationCap className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="font-bold text-xl text-gradient-hero">EduPath</h1>
+              <h1 className="font-bold text-xl text-black">ShikshaSarthi</h1>
               <p className="text-xs text-muted-foreground">Your Educational Guide</p>
             </div>
           </div>

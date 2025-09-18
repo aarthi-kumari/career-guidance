@@ -19,7 +19,7 @@ const LoginDialog = ({ children }: LoginDialogProps) => {
     e.preventDefault();
     toast({
       title: "Login Successful!",
-      description: "Welcome back to EduPath. Your personalized dashboard is ready.",
+      description: "Welcome back to ShikshaSarthi. Your personalized dashboard is ready.",
     });
     setIsOpen(false);
   };
@@ -28,7 +28,7 @@ const LoginDialog = ({ children }: LoginDialogProps) => {
     e.preventDefault();
     toast({
       title: "Account Created!",
-      description: "Welcome to EduPath! Let's start your educational journey.",
+      description: "Welcome to ShikshaSarthi! Let's start your educational journey.",
     });
     setIsOpen(false);
   };
@@ -41,7 +41,7 @@ const LoginDialog = ({ children }: LoginDialogProps) => {
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="text-center text-2xl font-bold text-gradient-hero">
-            Welcome to EduPath
+            Welcome to ShikshaSarthi
           </DialogTitle>
         </DialogHeader>
         
@@ -82,7 +82,7 @@ const LoginDialog = ({ children }: LoginDialogProps) => {
               </div>
               
               <Button type="submit" className="w-full btn-hero">
-                Login to EduPath
+                Login to ShikshaSarthi
               </Button>
             </form>
           </TabsContent>
