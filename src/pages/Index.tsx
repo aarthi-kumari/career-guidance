@@ -5,6 +5,7 @@ import CourseMapping from "@/components/CourseMapping";
 import CollegeDirectory from "@/components/CollegeDirectory";
 import TimelineTracker from "@/components/TimelineTracker";
 import Footer from "@/components/Footer";
+import ChatBot from "@/components/ChatBot";
 
 const Index = () => {
   return (
@@ -26,6 +27,7 @@ const Index = () => {
         </div>
       </main>
       <Footer />
+      <ChatBot />
     </div>
   );
 };
