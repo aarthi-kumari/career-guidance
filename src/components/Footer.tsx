@@ -74,7 +74,7 @@ const Footer = () => {
 
         <div className="border-t border-background/20 mt-12 pt-8 text-center">
           <p className="text-sm text-background/70">
-            © 2024 ShikshaSarthi. All rights reserved. | 
+            © 2025 ShikshaSarthi. All rights reserved. | 
             <a href="#" className="hover:text-background transition-colors ml-1">Privacy Policy</a> | 
             <a href="#" className="hover:text-background transition-colors ml-1">Terms of Service</a>
           </p>
