@@ -98,7 +98,7 @@ const ChatBot = () => {
           onClick={() => setIsOpen(true)}
           className="w-14 h-14 rounded-full bg-primary hover:bg-primary/90 shadow-lg animate-pulse"
         >
-          <MessageCircle className="w-6 h-6 text-white" />
+          <MessageCircle className="w-6 h-6 text-primary-foreground" />
         </Button>
       )}
 
@@ -106,7 +106,7 @@ const ChatBot = () => {
       {isOpen && (
         <Card className="w-80 h-96 flex flex-col shadow-xl border-0 bg-background/95 backdrop-blur-sm">
           {/* Header */}
-          <div className="flex items-center justify-between p-4 border-b bg-primary text-white rounded-t-lg">
+          <div className="flex items-center justify-between p-4 border-b bg-primary text-primary-foreground rounded-t-lg">
             <div className="flex items-center space-x-2">
               <Bot className="w-5 h-5" />
               <span className="font-semibold">HelpDesk</span>
@@ -115,7 +115,7 @@ const ChatBot = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(false)}
-              className="h-6 w-6 p-0 text-white hover:bg-white/20"
+              className="h-6 w-6 p-0 text-primary-foreground hover:bg-primary-foreground/20"
             >
               <X className="w-4 h-4" />
             </Button>
@@ -137,7 +137,7 @@ const ChatBot = () => {
                     <div
                       className={`w-8 h-8 rounded-full flex items-center justify-center ${
                         message.sender === 'user' 
-                          ? 'bg-primary text-white' 
+                          ? 'bg-primary text-primary-foreground' 
                           : 'bg-secondary text-secondary-foreground'
                       }`}
                     >
@@ -148,9 +148,9 @@ const ChatBot = () => {
                       )}
                     </div>
                     <div
-                      className={`rounded-lg px-3 py-2 text-sm ${
+                        className={`rounded-lg px-3 py-2 text-sm ${
                         message.sender === 'user'
-                          ? 'bg-primary text-white'
+                          ? 'bg-primary text-primary-foreground'
                           : 'bg-muted text-muted-foreground'
                       }`}
                     >
